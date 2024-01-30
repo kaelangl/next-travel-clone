@@ -20,7 +20,7 @@ export default async function Home() {
 
   return (
     <>
-      {/* <h2>Hello, {aRoute?.name}</h2> */}
+      <h2>Hello, {aRoute?.name}</h2>
       <Hero />
       <Camp aRoute={aRoute}/>
       <Guide />
