@@ -1,7 +1,7 @@
 // NAVIGATION
 export const NAV_LINKS = [
     { href: '/', key: 'home', label: 'Home' },
-    { href: '/find_route', key: 'route', label: 'Find a Route' },
+    { href: '/', key: 'route', label: 'Find a Route' },
     // { href: '/beta', key: 'beta_access', label: 'Beta Access' },
     { href: '/', key: 'contact_us', label: 'Contact Us' },
     ];

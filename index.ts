@@ -3,11 +3,11 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-    const allLocations = await prisma.location.findMany()
-    console.log(allLocations)
+    // const allLocations = await prisma.location.findMany()
+    // console.log(allLocations)
 
-    const allRoutes = await prisma.route.findMany()
-    console.log(allRoutes) 
+    // const allRoutes = await prisma.route.findMany()
+    // console.log(allRoutes) 
 }
 
 main()
