@@ -16,7 +16,7 @@ const Hero = () => {
         />
         <h1 className="bold-52 lg:bold-88">Feeling Lost, Ontario?</h1>
         <p className="regular-16 mt-6 text-gray-30 xl:max-w-[520px]">
-        Geocaching - whether on a trek for fun or treasure, geocaching is the hottest new trail activity. Reconnect with nature on a treasure hunt tailored just for you.
+        Get out on the hike again and feel the breeze. Give the trip some extra purpose by pairing the run with a Geocache. Whether on a trek for fun or treasure, geocaching is the hottest new trail activity. Reconnect with nature on a treasure hunt tailored just for you.
         </p>
 
         <div className="my-11 flex flex-wrap gap-5">
