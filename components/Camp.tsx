@@ -1,15 +1,17 @@
 import { PEOPLE_URL } from "@/constants";
+import prisma from "@/lib/prisma";
 import Image from "next/image";
 
 interface CampProps {
   backgroundImage: string;
-  title: string;
-  subtitle: string;
+  title: string | undefined;
+  subtitle: string | undefined | null;
   peopleJoined: string;
 }
 
-const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }: CampProps) => {
-  // console.log(peopleJoined);
+
+
+const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }: CampProps) => {  
   return (
     <div className={`h-full w-full min-w-[1100px] ${backgroundImage} bg-cover bg-no-repeat lg:rounded-r-5xl 2xl:rounded-5xl`}>
      <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
@@ -48,23 +50,26 @@ const CampSite = ({ backgroundImage, title, subtitle, peopleJoined }: CampProps)
   )
 }
 
-const Camp = (rroute: any) => {
+const Camp = async () => {
+  const aRoute = await prisma.route.findFirst();
+  const allRoutes = await prisma.route.findMany();
+
   console.log("the following is the route name that justa got passsed in:");
-  console.log(rroute.name);
+  console.log(aRoute?.name);
   return (
     <section className="2xl:max-container relative flex flex-col py-10 lg:mb-10 lg:py-20 xl:mb-20">
       <div className="hide-scrollbar flex h-[340px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px]">
         <CampSite 
           backgroundImage="bg-bg-img-1"
-          title={rroute.name}
-          subtitle={"Milton, Ontario"}
-          peopleJoined="50+ Cached"
+          title={allRoutes[0]?.name}
+          subtitle={allRoutes[0]?.description}
+          peopleJoined="150+ Cached"
         />
         <CampSite 
           backgroundImage="bg-bg-img-2"
-          title="Mountain View Camp"
-          subtitle="Singhampton Caves, Ontario"
-          peopleJoined="150+ Cached"
+          title={allRoutes[1]?.name}
+          subtitle={allRoutes[1]?.description}
+          peopleJoined="50+ Cached"
         />
       </div>
 

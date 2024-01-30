@@ -14,15 +14,12 @@ export default async function Home() {
   const allLocations = await prisma.location.findMany();
   const allRoutes = await prisma.route.findMany();
   const aRoute = await prisma.route.findFirst();
-  // console.log(allLocations);
-  // console.log(allRoutes);
   console.log(aRoute);
 
   return (
     <>
-      <h2>Hello, {aRoute?.name}</h2>
       <Hero />
-      <Camp aRoute={aRoute}/>
+      <Camp />
       <Guide />
     </>
   )
